@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <style>
+        button{
+            background: #1a64d6;
+            border: 1px solid #1a64d6;
+            border-radius: 30px;
+            border-bottom: inherit;
+            /*box-shadow: 5px 5px 10px rgba(161, 161, 161, 0.5);*/
+            cursor: pointer ;
+            color: white;
+            display: block;
+            font-size: 16px;
+            line-height: 22px;
+            margin: 20px auto;
+            padding: 10px 20px;
+        }
+        button:hover{
+            background-color: white;
+            color: #1a64d6; 
+            transition: all 150ms;
+        }
+        body{
+            align-items: center;
+            background-size: cover;
+            justify-content: center;
+            margin: 0; 
+        }
+        .content{
+            position: relative;
+            align-items: center;
+            display: block;
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+            justify-content: center;    
+
+        }
+    
+        h1{
+            color: #1a64d6;
+            font-size: 40px;
+            margin: 0;
+        }
+        h2{
+            font-size: 34px;
+            font-weight: 40;
+            line-height: 48px;
+        }
+        h3{
+            font-size: 30px;
+        }
+        li{
+            display: list-item;
+            margin: 0 auto;
+            list-style: none;
+            padding: 10px 0;
+
+        }
+        li:hover{
+            background-color: #fffbef;
+            border-radius: 15px;
+            list-style:none;
+            padding: 10px 0px;
+            transition: all 150ms ease-in-out;
+            width: 200px;
+        }
+        ul{
+            margin: 0px;
+            padding: 0px;
+        }
+        p{
+            margin: 0;
+        }
+        .wrapper {
+            background-image: url(https://t3.ftcdn.net/jpg/02/11/52/42/360_F_211524227_Ett8aboQvVnROAFtqu3S1pW99Y3Th9vm.jpg);
+            width:100%;
+            height:100%;
+            background-size: cover;
+            position: absolute;
+            opacity: 70%;
+        
+        }
+    </style>
+  </head>
+  <body>
+      <div class="wrapper"></div>
+        <div class="content">
+        <h1>🌤
+            Currently 67° in Bronxville</h1>
+        <h2>
+        13° /
+        <strong>23°</strong>
+        </h2>
+        <ul>
+            <li>
+                <h3> 🌧 Tomorrow</h3>
+                <p> 10° /
+                <strong>22°</strong> </p>
+            </li>
+            <li>
+                <h3> ⛅️ Saturday</h3>
+                <p> 15° /
+                <strong>17°</strong> </p>
+            </li>
+            <li>
+                <h3>☀️ Sunday</h3>
+                <p> 25°  
+                <strong>28°</strong> </p>
+            </li>
+            <button>Change City</button>
+            <p>Code by Jessica Rodrigues</p>
+         </div>     
+  <script>
+      function searchCity () {
+        let city = prompt("What city do you live in?");
+        let temperature = prompt("What temperature is it?");  
+
+        let h1 = document.querySelector("h1");
+        if (temperature > 0){
+           h1.innerHTML = ` 😀 Currently ${temperature}° in ${city}`;
+        } else{
+           h1.innerHTML = ` 🥶  Currently ${temperature}° in ${city}`;
+        } 
+      }
+        let  changeCity = document.querySelector("button");
+        changeCity.addEventListener("click", searchCity);
+  </script>
+  </body>
+</html>
